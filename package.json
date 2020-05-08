@@ -12,7 +12,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "Jeff Ashear",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
@@ -21,5 +21,13 @@
   "dependencies": {
     "express": "^4.16.3",
     "if-env": "^1.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeff-Ashear/GoogleBooksSearchApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jeff-Ashear/GoogleBooksSearchApp/issues"
+  },
+  "homepage": "https://github.com/Jeff-Ashear/GoogleBooksSearchApp#readme"
 }
