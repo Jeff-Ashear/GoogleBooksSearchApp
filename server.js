@@ -6,6 +6,12 @@ const mongoose = require ("mongoose");
 
 mongoose.connect(process.env.MONGODB_URI)
 
+// create a mongooose model
+var personSchema = new mongoose.Schema({
+  name: String
+});
+
+var Person = mongoose.model('person', personSchema);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -16,6 +22,17 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+app.post('/create-person', function(req, res) {
+  console.log(req.body.name);
+
+  Person.create({ name: req.body.name }, (error) => {
+    if (error) {
+      res.end(error);
+    } else {
+      res.end('person created in database.');
+    }
+  });
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs
