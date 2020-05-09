@@ -26,14 +26,22 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.post('/create-person', function(req, res) {
-  console.log(req.body.name);
+app.post('/save-book', function(request, response) {
+  console.log(request.body.title);
+  console.log(request.body.author);
+  console.log(request.body.description);
+  console.log(request.body.image);
 
-  Person.create({ name: req.body.name }, (error) => {
+  Book.create({ 
+    title: request.body.title,
+    author: request.body.author,
+    description: request.body.description,
+    image: request.body.image
+  }, (error) => {
     if (error) {
-      res.end(error);
+      response.end(error);
     } else {
-      res.end('person created in database.');
+      response.end('Book created in database.');
     }
   });
 });
