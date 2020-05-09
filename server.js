@@ -3,15 +3,19 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require ("mongoose");
+const Schema = mongoose.Schema;
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb://heroku_40lj7s5b:f9sd7msbe4vvh0dbbhk78rpprp@ds029466.mlab.com:29466/heroku_40lj7s5b")
 
 // create a mongooose model
-var personSchema = new mongoose.Schema({
-  name: String
+var bookSchema = new mongoose.Schema({
+  title: String,
+  author: String,
+  description: String,
+  image: String
 });
 
-var Person = mongoose.model('person', personSchema);
+var Book = mongoose.model('Book', bookSchema);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
