@@ -9,7 +9,7 @@ class SavedComponent extends Component {
     }
 
     dbQuery = () => {
-        $.ajax({
+        ajax({
             method: 'POST',
             url: '/save-book',
             data: {
