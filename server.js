@@ -31,13 +31,14 @@ app.get("/api/books", function(request, response) {
 
 app.post('/api/books', function(request, response) {
 
-  Book.create(request.body)
-  .then(books => {
-    response.json(books);
-  })
-  .catch(err=> {
-    response.status(404).json(err);
-  });
+  response.send("post books")
+  // Book.create(request.body)
+  // .then(books => {
+  //   response.json(books);
+  // })
+  // .catch(err=> {
+  //   response.status(404).json(err);
+  // });
 });
 
 app.delete("/api/books/:id", function(request, response) {

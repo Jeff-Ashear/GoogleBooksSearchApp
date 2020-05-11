@@ -13,7 +13,7 @@ class SavedComponent extends Component {
     }
 
     dbQuery = () => {
-        axios.get("/books")
+        axios.get("/api/books")
             .then((response) => {
                 console.log(response);
                 this.setState({
