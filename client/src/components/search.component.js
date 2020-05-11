@@ -48,7 +48,7 @@ class SearchComponent extends Component {
             image
         }
         console.log("saving to backend", book);
-        axios.post("/books", book)
+        axios.post("/api/books", book)
         .then(res => {
             console.log("saved book, ", res)
         })
