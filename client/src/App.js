@@ -7,35 +7,39 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+
+  state = {
+
+  }
+
   render() {
     return (
       <Router>
-        <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-dark bg-light">
-            <a class="navbar-brand" href="bookpic here" target="_blank">
+        <div className="container-fluid" style={{ padding: 0 }}>
+          <nav className="navbar navbar-dark bg-primary" style={{ color: 'black' }}>
+            {/* <a class="navbar-brand" href="bookpic here" target="_blank">
               <img src={logo} width="30" height="30" alt="Booksbooksbooksbooks" />
-            </a>
-            <Link to="/" className="navbar-brand">MERN-Stack Book Search and Save App</Link>
-            <div className="collapse navbar-collapse">
-              <ul className="navbar-nav mr-auto">
-                <li className="navbar-item">
-                  <Link to="/" className="nav-link">Search</Link>
-                </li>
-                <li className="navbar-item">
-                  <Link to="/saved" className="nav-link">saved</Link>
-                </li>
-              </ul>
-            </div>
+            </a> */}
+            <Link to="/" className="navbar-brand" >MERN-Stack Book Search and Save App</Link>
+
+            <ul className="nav">
+              <li className="nav-item">
+                <Link to="/" className="nav-link text-dark">Search</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/saved" className="nav-link text-dark">Saved</Link>
+              </li>
+            </ul>
           </nav>
         </div>
-        <Route exact path="/" component={SearchComponent} />
-        <Route exact path="/saved" component={SavedComponent} />
-        <div className="container">
+        <div className="container" style={{paddingTop: '1em'}}>
           <div className="App-header">
             <h2>Google Book Search and Save</h2>
           </div>
-
         </div>
+        <Route exact path="/" component={SearchComponent} />
+        <Route exact path="/saved" component={SavedComponent} />
+        
       </Router>
     );
   }
