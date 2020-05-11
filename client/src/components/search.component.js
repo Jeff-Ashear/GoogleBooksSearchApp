@@ -83,7 +83,6 @@ class SearchComponent extends Component {
                     </div>
                     </div>
                 ))}
-               //can you hear me?
             </div>
         )
     }

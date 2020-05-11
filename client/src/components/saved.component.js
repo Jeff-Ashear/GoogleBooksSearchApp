@@ -5,31 +5,48 @@ import axios from "axios";
 
 class SavedComponent extends Component {
 
+    state = {
+        books: []
+    }
     componentDidMount() {
         this.dbQuery();
     }
 
     dbQuery = () => {
-        axios.post("/save-book", {
-            title: "The Name of the Wind",
-            author: "Patrick Rothfuss",
-            description: "A coming of age tale set in a world with rich characters, an interesting set of rules for it's magic, and a fresh take on high fantasy.",
-            image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FName-Wind-Patrick-Rothfuss%2Fdp%2F0756404746&psig=AOvVaw1b8yp4Zc2PaoqaxbqX5HdM&ust=1589082245493000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPj5x-jupekCFQAAAAAdAAAAABAW"
-     })
-            .then(function(response) {
+        axios.get("/books")
+            .then((response) => {
                 console.log(response);
-            });
+                this.setState({
+                    books: response.data
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     render() {
         return (
-            <div>
-                <p>I can display saved books in the future.</p>
+            <div className="container">
+
+                {this.state.books.map((book, index) => (
+                    <div className="card" key={index}>
+                        <h5 className="card-header" name="title"><span>By: </span>{book.title}</h5>
+                        <div className="card-body">
+                            <h5 className="card-title" name="author">{book.authors}</h5>
+                            <p className="card-text">{book.description}</p>
+                            <div className="text-right">
+                                <a href={book.link} target="_blank" className="btn btn-primary">View</a>
+                                <button onClick={() => this.handleDelete(book.volumeInfo)} target="_blank" className="btn btn-primary">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         )
     }
 }
 
- export default SavedComponent;
+export default SavedComponent;
 
 // axios calls, use the same fields but the names could differ in the db, change save button to delete 
