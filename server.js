@@ -19,9 +19,7 @@ var MONGODB_URI =  process.env.MONGODB_URI || "mongodb://heroku_1b5mbwhd:4tadas8
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+
 // Define API routes here
 app.get("/api/books", function(request, response) {
   Book.find({})
@@ -48,6 +46,10 @@ app.delete("/api/books/:id", function(request, response) {
   .then(book => response.json(book))
   .catch(err => response.status(404).json(err))
 })
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Send every other request to the React app
 // Define any API routes before this runs
