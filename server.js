@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Define API routes here
-app.get("/books", function(request, response) {
+app.get("/api/books", function(request, response) {
   Book.find({})
   .then(books => {
     return response.json(books);
@@ -28,7 +28,7 @@ app.get("/books", function(request, response) {
   .catch((err) => response.status(404).json(err))
 })
 
-app.post('/books', function(request, response) {
+app.post('/api/books', function(request, response) {
 
   Book.create(request.body)
   .then(books => {
@@ -39,7 +39,7 @@ app.post('/books', function(request, response) {
   });
 });
 
-app.delete("/books/:id", function(request, response) {
+app.delete("/api/books/:id", function(request, response) {
   console.log("at dele:", request.params.id)
   Book.remove({_id: request.params.id})
   .then(book => response.json(book))
