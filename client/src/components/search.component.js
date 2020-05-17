@@ -1,6 +1,7 @@
 /* global $ */
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../index.css";
 
 class SearchComponent extends Component {
 
@@ -47,6 +48,9 @@ class SearchComponent extends Component {
             link,
             image
         }
+        let imageStyle ={
+            width: '40px'
+        }
         console.log("saving to backend", book);
         axios.post("/api/books", book)
         .then(res => {
@@ -75,6 +79,7 @@ class SearchComponent extends Component {
                     <h5 className="card-header" name="title"><span>By: </span>{book.volumeInfo.title}</h5>
                     <div className="card-body">
                         <h5 className="card-title" name="author">{book.volumeInfo.authors}</h5>
+                        <image className="image" src={book.volumeInfo.imageLinks.smallThumbnail} />
                 <p className="card-text">{book.volumeInfo.description}</p>
                         <div className="text-right">
                         <a href={book.volumeInfo.infoLink} target="_blank" className="btn btn-primary">View</a>
