@@ -18,6 +18,7 @@ class SearchComponent extends Component {
 
         e.preventDefault();
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}&printType=books&key=AIzaSyCPWHozLBx7coB-2XjvA13alHzllLA_b5c`)
+        // axios.get(`https://www.googleapis.com/books/v1/volumes?q=transall`)
         .then(res=> {
             console.log(res);
             this.setState({
@@ -79,7 +80,8 @@ class SearchComponent extends Component {
                     <h5 className="card-header" name="title"><span>By: </span>{book.volumeInfo.title}</h5>
                     <div className="card-body">
                         <h5 className="card-title" name="author">{book.volumeInfo.authors}</h5>
-                        <image className="image" src={book.volumeInfo.imageLinks.smallThumbnail} />
+                        <image className="image" src={book.volumeInfo.imageLinks.smallThumbnail}></image>
+                        {/* <Image className="image" style={imageStyle} source={image} /> */}
                 <p className="card-text">{book.volumeInfo.description}</p>
                         <div className="text-right">
                         <a href={book.volumeInfo.infoLink} target="_blank" className="btn btn-primary">View</a>
