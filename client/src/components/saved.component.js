@@ -31,9 +31,10 @@ class SavedComponent extends Component {
 
                 {this.state.books.map((book, index) => (
                     <div className="card" key={index}>
-                        <h5 className="card-header" name="title"><span>By: </span>{book.title}</h5>
+                        <h5 className="card-header" name="title"><span></span>{book.title}</h5>
                         <div className="card-body">
-                            <h5 className="card-title" name="author">{book.authors}</h5>
+                            <h5 className="card-title" name="author">By: {book.authors}</h5>
+                            <img src={book.image}></img>
                             <p className="card-text">{book.description}</p>
                             <div className="text-right">
                                 <a href={book.link} target="_blank" className="btn btn-primary">View</a>

@@ -5,4 +5,15 @@ google books api key:
 AIzaSyCPWHozLBx7coB-2XjvA13alHzllLA_b5c
 
 relevant links:
-https://googlebooksapiapp.herokuapp.com/
+
+Heroku deployment:
+
+    https://googlebooksapiapp.herokuapp.com/
+
+
+GitHub Links: 
+
+    
+
+
+
