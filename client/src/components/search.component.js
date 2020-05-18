@@ -42,6 +42,7 @@ class SearchComponent extends Component {
         // contruct the book
         let image = imageLinks.smallThumbnail;
         let link = infoLink;
+        authors = authors.join(", ")
         let book = {
             title, 
             authors, 
@@ -77,12 +78,12 @@ class SearchComponent extends Component {
 
                 {this.state.books.map((book, index) => (
                     <div className="card" key={index}>
-                    <h5 className="card-header" name="title"><span>By: </span>{book.volumeInfo.title}</h5>
+                    <h5 className="card-header" name="title"><span></span>{book.volumeInfo.title}</h5>
                     <div className="card-body">
-                        <h5 className="card-title" name="author">{book.volumeInfo.authors}</h5>
+                        <h5 className="card-title" name="author">By: {book.volumeInfo.authors}</h5>
                         <img className="image" src={book.volumeInfo.imageLinks.smallThumbnail}/>
                         {/* <Image className="image" style={imageStyle} source={image} /> */}
-                <p className="card-text">{book.volumeInfo.description}</p>
+                        <p className="card-text">{book.volumeInfo.description}</p>
                         <div className="text-right">
                         <a href={book.volumeInfo.infoLink} target="_blank" className="btn btn-primary">View</a>
                         <button onClick={() => this.handleSave(book.volumeInfo)} target="_blank" className="btn btn-primary">Save</button>
