@@ -18,6 +18,10 @@ var MONGODB_URI = "mongodb://heroku_1b5mbwhd:4tadas89mmunku92h6ok4icueo@ds017553
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 // Serve up static assets (usually on heroku)
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }); 
 
@@ -47,9 +51,7 @@ app.delete("/api/books/:id", function(request, response) {
   .catch(err => response.status(404).json(err))
 })
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+
 
 // Send every other request to the React app
 // Define any API routes before this runs

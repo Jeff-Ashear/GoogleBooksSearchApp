@@ -80,7 +80,7 @@ class SearchComponent extends Component {
                     <h5 className="card-header" name="title"><span>By: </span>{book.volumeInfo.title}</h5>
                     <div className="card-body">
                         <h5 className="card-title" name="author">{book.volumeInfo.authors}</h5>
-                        <image className="image" src={book.volumeInfo.imageLinks.smallThumbnail}></image>
+                        <img className="image" src={book.volumeInfo.imageLinks.smallThumbnail}/>
                         {/* <Image className="image" style={imageStyle} source={image} /> */}
                 <p className="card-text">{book.volumeInfo.description}</p>
                         <div className="text-right">
