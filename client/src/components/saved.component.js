@@ -1,7 +1,7 @@
 // global variables
 import React, { Component } from 'react';
 import axios from "axios";
-
+import paper from "../"
 
 class SavedComponent extends Component {
 
