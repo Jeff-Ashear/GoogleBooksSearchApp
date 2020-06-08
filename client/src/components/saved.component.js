@@ -1,7 +1,8 @@
 // global variables
 import React, { Component } from 'react';
 import axios from "axios";
-import paper from "../"
+import paper from "../styling/images/rice-paper.jpg";
+import homeLib from "../styling/images/homeLib.jpg";
 
 class SavedComponent extends Component {
 
@@ -27,23 +28,27 @@ class SavedComponent extends Component {
 
     render() {
         return (
-            <div className="container">
+            <>
+                <div style={{ backgroundImage: `url(${homeLib})` }}>
+                    <div className="container">
 
-                {this.state.books.map((book, index) => (
-                    <div className="card" key={index}>
-                        <h5 className="card-header" name="title"><span></span>{book.title}</h5>
-                        <div className="card-body">
-                            <h5 className="card-title" name="author">By: {book.authors}</h5>
-                            <img src={book.image}></img>
-                            <p className="card-text">{book.description}</p>
-                            <div className="text-right">
-                                <a href={book.link} target="_blank" className="btn btn-primary">View</a>
-                                <button onClick={() => this.handleDelete(book.volumeInfo)} target="_blank" className="btn btn-primary">Delete</button>
+                        {this.state.books.map((book, index) => (
+                            <div className="card" key={index} style={{ backgroundImage: `url(${paper})` }}>
+                                <h5 className="card-header" name="title"><span></span>{book.title}</h5>
+                                <div className="card-body">
+                                    <h5 className="card-title" name="author">By: {book.authors}</h5>
+                                    <img src={book.image}></img>
+                                    <p className="card-text">{book.description}</p>
+                                    <div className="text-right">
+                                        <a href={book.link} target="_blank" className="btn btn-primary">View</a>
+                                        <button onClick={() => this.handleDelete(book.volumeInfo)} target="_blank" className="btn btn-primary">Delete</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
-                ))}
-            </div>
+                </div >
+            </>
         )
     }
 }

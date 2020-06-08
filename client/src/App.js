@@ -5,6 +5,8 @@ import SearchComponent from "./components/search.component.js";
 import SavedComponent from "./components/saved.component.js";
 import logo from "./logo.svg";
 import "./App.css";
+import littleShelf from "./styling/images/sideStacks.png";
+import googleLib from "./styling/images/googleLib.jpg";
 
 class App extends Component {
 
@@ -33,8 +35,8 @@ class App extends Component {
           </nav>
         </div>
         <div className="container" style={{paddingTop: '1em'}}>
-          <div className="App-header">
-            <h2>Google Book Search and Save</h2>
+          <div className="App-header" style={{ backgroundImage: `url(${littleShelf})`}}>
+            <h1 style={{ color: `white`, fontOutline: `1px`}}>Google Books Search and Save</h1>
           </div>
         </div>
         <Route exact path="/" component={SearchComponent} />
