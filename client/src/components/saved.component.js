@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import paper from "../styling/images/rice-paper.jpg";
-import homeLib from "../styling/images/homeLib.jpg";
 
 class SavedComponent extends Component {
 
@@ -25,15 +24,24 @@ class SavedComponent extends Component {
                 console.log(err);
             })
     }
+    
 
     render() {
         return (
             <>
-                <div style={{ backgroundImage: `url(${homeLib})` }}>
+                <div style={{ 
+                        minHeight: `200vh`,
+                        height: `100%`,
+                        width: `100vw`,
+                        background: `radial-gradient(farthest-corner at 20vw 20vh, goldenrod 1%, darkkhaki 100%)`}}>
                     <div className="container">
 
                         {this.state.books.map((book, index) => (
-                            <div className="card" key={index} style={{ backgroundImage: `url(${paper})` }}>
+                            <div className="card" key={index} style={{ 
+                                backgroundImage: `url(${paper})`,
+                                margin: `10px`,
+                                boxShadow: `4px 4px 30px black` 
+                                }}>
                                 <h5 className="card-header" name="title"><span></span>{book.title}</h5>
                                 <div className="card-body">
                                     <h5 className="card-title" name="author">By: {book.authors}</h5>

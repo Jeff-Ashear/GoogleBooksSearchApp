@@ -3,10 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SearchComponent from "./components/search.component.js";
 import SavedComponent from "./components/saved.component.js";
-import logo from "./logo.svg";
 import "./App.css";
+import texture from "./styling/images/brownLeather.jpg";
 import littleShelf from "./styling/images/sideStacks.png";
-import googleLib from "./styling/images/googleLib.jpg";
 
 class App extends Component {
 
@@ -34,8 +33,13 @@ class App extends Component {
             </ul>
           </nav>
         </div>
-        <div className="container" style={{paddingTop: '1em'}}>
-          <div className="App-header" style={{ backgroundImage: `url(${littleShelf})`}}>
+        <div className="container" style={{padding: '1em', backgroundImage: `url(${texture})`, margin: `0 auto`, width: `100vw`}}>
+          <div className="App-header" style={{ 
+            backgroundImage: `url(${littleShelf})`,
+            backgroundSize: `contain`,
+            border: `inset 4px darkgrey`,
+            borderRadius: `4px`
+            }}>
             <h1 style={{ color: `white`, fontOutline: `1px`}}>Google Books Search and Save</h1>
           </div>
         </div>

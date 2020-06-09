@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "../index.css";
 import paper from "../styling/images/rice-paper.jpg";
-import googleLib from "../styling/images/googleLib.jpg";
 
 class SearchComponent extends Component {
 
@@ -68,7 +67,13 @@ class SearchComponent extends Component {
     render() {
         return (
             <>
-                    <div  style={{ backgroundImage: `url(${googleLib})`}}>
+                    <div  style={{
+                        height: `200vh`,
+                        width: `100vw`,
+                        background: `radial-gradient(closest-corner at 80vw 20vh, darkturquoise 20%, steelblue 100%)`
+                        
+
+                    }}>
                 <div className="container">
                         <form>
                             <div className="form-group">
