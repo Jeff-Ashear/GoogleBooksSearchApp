@@ -24,6 +24,20 @@ class SavedComponent extends Component {
                 console.log(err);
             })
     }
+
+    handleDelete = (books.volumeInfo) => {
+
+        axios.delete("/api/books/:id")
+            .then((response) => {
+                console.log(response);
+                console.log("Book Deleted")
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
+        // console.log(book.volumeInfo);
+    }
     
 
     render() {
