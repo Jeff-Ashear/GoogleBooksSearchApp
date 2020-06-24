@@ -50,4 +50,4 @@ GitHub Links:
     Bootstrap is used for styling the app.
     Heroku was used to deploy the app.
 
-The app was developed by Jeff Ashear with assitance from Aliff Macapinlac.
+The app was developed by Jeff Ashear.
