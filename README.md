@@ -1,9 +1,12 @@
 # GoogleBooksSearchApp
-App demonstrating use of React components and lifecycle, Node, Express,  MongoDB, and the Google Books API.
+    Thank you for looking at the GoogleBooks Search App! It demonstrates use of React components and lifecycle, Node, Express,  MongoDB, and the Google Books API.
 
 Portfolio:
 
-    https://jeff-ashear.github.io/UpdatedPortfolio/
+    https://tinyurl.com/jeff-ashear-portfolio
+
+
+![Welcome](./src/styling/images/bookSearch.jpg)
 
 
 google books api key:
@@ -11,15 +14,13 @@ AIzaSyCPWHozLBx7coB-2XjvA13alHzllLA_b5c
 
 relevant links:
 
-Heroku deployment:
+    Heroku deployment:
+    https://tinyurl.com/book-searcher
 
-    https://googlebooksapiapp.herokuapp.com/
 
-
-GitHub Links: 
-
-    https://github.com/Jeff-Ashear/GoogleBooksSearchApp.git
-    https://jeff-ashear.github.io/GoogleBooksSearchApp/
+    Code repo: 
+    https://tinyurl.com/book-search-repo
+    
 
 
 1. The purpose of this app is to allow the user to seach Google Books and save to and recall from the books the wish from a db.
@@ -30,24 +31,20 @@ GitHub Links:
 
 4. There is no video of this app in use yet.
 
-5. Heroku deployment:
+5. Relevant links:
 
-    https://googlebooksapiapp.herokuapp.com/
-
-
-GitHub Links: 
-
-    https://github.com/Jeff-Ashear/GoogleBooksSearchApp.git
-    https://jeff-ashear.github.io/GoogleBooksSearchApp/
+        Heroku deployment:
+        https://tinyurl.com/book-searcher
 
 
-
+        Code repo: 
+        https://tinyurl.com/book-search-repo
 
 6. Technologies used in this app:  
-    React provides component based functionality and light-weight rendering.
-    Mongoose connects the app models to MongoDB, and is hosted on MLab.
-    The google books api powers the search function and pipes the results back to the app
-    Bootstrap is used for styling the app.
-    Heroku was used to deploy the app.
+        React provides component basic functionality and light-weight rendering.
+        Mongoose connects the app models to MongoDB, and is hosted on MLab.
+        The google books api powers the search function and pipes the results back to the app
+        Bootstrap is used for styling the app.
+        Heroku was used to deploy the app.
 
-The app was developed by Jeff Ashear.
+7. The app was developed by Jeff Ashear.
