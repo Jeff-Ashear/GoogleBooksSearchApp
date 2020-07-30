@@ -6,7 +6,7 @@ Portfolio:
     https://tinyurl.com/jeff-ashear-portfolio
 
 
-![Welcome](./src/styling/images/bookSearch.jpg)
+![Welcome](./client/src/styling/images/bookSearch.jpg)
 
 
 google books api key:
