@@ -3,7 +3,7 @@
 
 Portfolio:
 
-    https://tinyurl.com/jeff-ashear-portfolio
+    https://tinyurl.com/jeffashear
 
 
 ![Welcome](./client/src/styling/images/bookSearch.jpg)
